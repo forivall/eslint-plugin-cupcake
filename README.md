@@ -75,7 +75,7 @@ See also [Configuring ESLint](https://eslint.org/docs/user-guide/configuring).
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
-| [cupcake/case-block](./docs/rules/case-block.md) | An example rule. | ⭐️ |
+| [cupcake/case-block](./docs/rules/case-block.md) | Enforces block statements in case blocks | ⭐️✒️ |
 
 <!--RULE_TABLE_END-->
 
