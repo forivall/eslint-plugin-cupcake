@@ -19,11 +19,13 @@ ruleTester.run("case-block", rule, {
     invalid: [
         {
             code: "switch (a) { case 1: break; }",
+            output: "switch (a) { case 1: {break;} }",
             parserOptions: { ecmaVersion: 6 },
             errors: [{ messageId: "unexpected", type: "SwitchCase" }],
         },
         {
             code: "switch (a) { case 1: { break; } break; }",
+            output: "switch (a) { case 1: {{ break; } break;} }",
             parserOptions: { ecmaVersion: 6 },
             errors: [{ messageId: "unexpected", type: "SwitchCase" }],
         },
