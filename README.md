@@ -59,7 +59,7 @@ Write your config file such as `.eslintrc.yml`.
 plugins:
   - cupcake
 rules:
-  cupcake/example-rule: error
+  cupcake/case-block: error
 ```
 
 See also [Configuring ESLint](https://eslint.org/docs/user-guide/configuring).
@@ -75,7 +75,7 @@ See also [Configuring ESLint](https://eslint.org/docs/user-guide/configuring).
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
-| [cupcake/example-rule](./docs/rules/example-rule.md) | An example rule. | ⭐️ |
+| [cupcake/case-block](./docs/rules/case-block.md) | An example rule. | ⭐️ |
 
 <!--RULE_TABLE_END-->
 

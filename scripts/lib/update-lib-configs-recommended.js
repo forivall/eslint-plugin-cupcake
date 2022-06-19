@@ -22,6 +22,7 @@ module.exports = {
 };
 `;
 const engine = new ESLint({ fix: true });
+
 engine.lintText(rawContent, { filePath }).then(async (results) => {
     const content = results[0].output || rawContent;
 
