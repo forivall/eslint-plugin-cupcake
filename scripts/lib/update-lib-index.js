@@ -2,7 +2,8 @@
 
 const fs = require("fs");
 const path = require("path");
-const { CLIEngine } = require("eslint");
+const { ESLint } = require("eslint");
+const prettier = require("prettier");
 const { rules } = require("./rules");
 
 const filePath = path.resolve(__dirname, "../../lib/index.js");
@@ -20,8 +21,15 @@ module.exports = {
     }
 };
 `;
-const engine = new CLIEngine({ fix: true });
-const lintResult = engine.executeOnText(rawContent, filePath);
-const content = lintResult.results[0].output || rawContent;
+const engine = new ESLint({ fix: true });
+engine.lintText(rawContent, { filePath }).then(async (results) => {
+    const content = results[0].output || rawContent;
 
-fs.writeFileSync(filePath, content);
+    fs.writeFileSync(
+        filePath,
+        prettier.format(content, {
+            ...(await prettier.resolveConfig(filePath)),
+            filepath: filePath,
+        })
+    );
+});
