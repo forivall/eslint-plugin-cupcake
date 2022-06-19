@@ -19,14 +19,19 @@ const testPath = path.resolve(__dirname, "../tests/lib/rules", `${ruleId}.js`);
 // Overwrite check.
 for (const filePath of [docPath, rulePath, testPath]) {
     if (fs.existsSync(filePath)) {
-        console.error("%o has existed already.", path.relative(process.cwd(), filePath));
+        console.error(
+            "%o has existed already.",
+            path.relative(process.cwd(), filePath)
+        );
         process.exitCode = 1;
         return;
     }
 }
 
 // Generate files.
-fs.writeFileSync(docPath, `# ${pluginId}/${ruleId}
+fs.writeFileSync(
+    docPath,
+    `# ${pluginId}/${ruleId}
 > (TODO: summary)
 
 (TODO: why is this rule useful?)
@@ -38,9 +43,12 @@ fs.writeFileSync(docPath, `# ${pluginId}/${ruleId}
 ## Options
 
 (TODO: what do options exist?)
-`);
+`
+);
 
-fs.writeFileSync(rulePath, `"use strict";
+fs.writeFileSync(
+    rulePath,
+    `"use strict";
 
 module.exports = {
     meta: {
@@ -72,9 +80,12 @@ module.exports = {
         return {}
     }
 };
-`);
+`
+);
 
-fs.writeFileSync(testPath, `"use strict";
+fs.writeFileSync(
+    testPath,
+    `"use strict";
 
 const { RuleTester } = require("eslint");
 const rule = require("../../../lib/rules/${ruleId}");
@@ -83,4 +94,5 @@ new RuleTester().run("${ruleId}", rule, {
     valid: [],
     invalid: []
 });
-`);
+`
+);

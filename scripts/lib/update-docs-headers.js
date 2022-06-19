@@ -33,7 +33,8 @@ function renderHeader(rule) {
     }
     if (rule.deprecated) {
         const replace = rule.replacedBy.map(
-            ruleId => `[${ruleId}](./${ruleId.replace(`${pluginId}/`, "")}.md)`
+            (ruleId) =>
+                `[${ruleId}](./${ruleId.replace(`${pluginId}/`, "")}.md)`
         );
         const replaceText =
             replace.length === 0

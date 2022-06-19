@@ -28,14 +28,12 @@ Below is an example of README.
 
 ----
 
-# eslint-plugin-xxxx (template)
+# eslint-plugin-cupcake
 
 <!--
-[![npm version](https://img.shields.io/npm/v/eslint-plugin-xxxx.svg)](https://www.npmjs.com/package/eslint-plugin-xxxx)
-[![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-xxxx.svg)](http://www.npmtrends.com/eslint-plugin-xxxx)
-[![Build Status](https://travis-ci.org/mysticatea/eslint-plugin-xxxx.svg?branch=master)](https://travis-ci.org/mysticatea/eslint-plugin-xxxx)
-[![Coverage Status](https://codecov.io/gh/mysticatea/eslint-plugin-xxxx/branch/master/graph/badge.svg)](https://codecov.io/gh/mysticatea/eslint-plugin-xxxx)
-[![Dependency Status](https://david-dm.org/mysticatea/eslint-plugin-xxxx.svg)](https://david-dm.org/mysticatea/eslint-plugin-xxxx)
+[![npm version](https://img.shields.io/npm/v/eslint-plugin-cupcake.svg)](https://www.npmjs.com/package/eslint-plugin-cupcake)
+[![build status](https://github.com/forivall/eslint-plugin-cupcake/actions/workflows/main.yml/badge.svg)](https://github.com/forivall/eslint-plugin-cupcake/actions/workflows/main.yml)
+[![coverage status](https://coveralls.io/repos/github/forivall/eslint-plugin-cupcake/badge.svg)](https://coveralls.io/github/forivall/eslint-plugin-cupcake)
 -->
 
 A template for ESLint plugins.
@@ -45,7 +43,7 @@ A template for ESLint plugins.
 Use [npm](https://www.npmjs.com/) or a compatibility tool to install.
 
 ```
-$ npm install --save-dev eslint eslint-plugin-xxxx
+$ npm install --save-dev eslint eslint-plugin-cupcake
 ```
 
 ### Requirements
@@ -59,16 +57,16 @@ Write your config file such as `.eslintrc.yml`.
 
 ```yml
 plugins:
-  - xxxx
+  - cupcake
 rules:
-  xxxx/example-rule: error
+  cupcake/example-rule: error
 ```
 
 See also [Configuring ESLint](https://eslint.org/docs/user-guide/configuring).
 
 ## Configs
 
-- `xxxx/recommended` ... enables the recommended rules.
+- `cupcake/recommended` ... enables the recommended rules.
 
 ## Rules
 
@@ -77,7 +75,7 @@ See also [Configuring ESLint](https://eslint.org/docs/user-guide/configuring).
 
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
-| [xxxx/example-rule](./docs/rules/example-rule.md) | An example rule. | ⭐️ |
+| [cupcake/example-rule](./docs/rules/example-rule.md) | An example rule. | ⭐️ |
 
 <!--RULE_TABLE_END-->
 

@@ -1,6 +1,6 @@
-# xxxx/example-rule
+# cupcake/example-rule
 > An example rule.
-> - ⭐️ This rule is included in `plugin:xxxx/recommended` preset.
+> - ⭐️ This rule is included in `plugin:cupcake/recommended` preset.
 
 This is an example.
 

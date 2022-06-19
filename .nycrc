@@ -1,10 +1,5 @@
 {
-    "include": [
-        "lib/**/*.js"
-    ],
-    "reporter": [
-        "lcov",
-        "text-summary"
-    ],
+    "include": ["lib/**/*.js"],
+    "reporter": ["lcov", "text-summary"],
     "sourceMap": true
 }

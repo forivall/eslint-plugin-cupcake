@@ -25,9 +25,10 @@ const { pluginId } = require("./plugin-id");
  */
 
 /** @type {RuleInfo[]} */
-const rules = fs.readdirSync(rootDir)
+const rules = fs
+    .readdirSync(rootDir)
     .sort()
-    .map(filename => {
+    .map((filename) => {
         const filePath = path.join(rootDir, filename);
         const name = filename.slice(0, -3);
         const { meta } = require(filePath);
@@ -39,7 +40,7 @@ const rules = fs.readdirSync(rootDir)
             deprecated: Boolean(meta.deprecated),
             fixable: Boolean(meta.fixable),
             replacedBy: [],
-            ...meta.docs
+            ...meta.docs,
         };
     });
 
@@ -47,10 +48,10 @@ const rules = fs.readdirSync(rootDir)
 const categories = [
     "Possible Errors",
     "Best Practices",
-    "Stylistic Issues"
-].map(id => ({
+    "Stylistic Issues",
+].map((id) => ({
     id,
-    rules: rules.filter(rule => rule.category === id && !rule.deprecated)
+    rules: rules.filter((rule) => rule.category === id && !rule.deprecated),
 }));
 
 module.exports = { rules, categories };
