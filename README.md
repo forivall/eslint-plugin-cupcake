@@ -1,8 +1,8 @@
 # eslint-plugin-cupcake
 
-<!--
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-cupcake.svg)](https://www.npmjs.com/package/eslint-plugin-cupcake)
 [![build status](https://github.com/forivall/eslint-plugin-cupcake/actions/workflows/main.yml/badge.svg)](https://github.com/forivall/eslint-plugin-cupcake/actions/workflows/main.yml)
+<!--
 [![coverage status](https://coveralls.io/repos/github/forivall/eslint-plugin-cupcake/badge.svg)](https://coveralls.io/github/forivall/eslint-plugin-cupcake)
 -->
 
@@ -56,7 +56,7 @@ This plugin follows [Semantic Versioning](http://semver.org/) and [ESLint's Sema
 
 ## Changelog
 
-- [GitHub Releases]()
+- [GitHub Releases](https://github.com/forivall/eslint-plugin-cupcake/releases)
 
 ## Contributing
 
