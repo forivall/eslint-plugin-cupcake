@@ -46,6 +46,7 @@ See also [Configuring ESLint](https://eslint.org/docs/user-guide/configuring).
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [cupcake/case-block](./docs/rules/case-block.md) | Enforces block statements in case blocks | ⭐️✒️ |
+| [cupcake/declaration-order](./docs/rules/declaration-order.md) | Enforces order of variable declarations | ⭐️ |
 
 <!--RULE_TABLE_END-->
 
