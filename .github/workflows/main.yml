@@ -2,9 +2,9 @@ name: test
 
 on:
     push:
-        branches: [latest]
+        branches: [main]
     pull_request:
-        branches: [latest]
+        branches: [main]
     workflow_dispatch:
 
 jobs:
@@ -17,5 +17,5 @@ jobs:
               uses: actions/setup-node@v2.3.0
               with:
                   node-version: lts/*
-            - run: npm ci
+            - run: npm install
             - run: npm test
