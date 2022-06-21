@@ -50,6 +50,7 @@ fs.writeFileSync(
     rulePath,
     `"use strict";
 
+/** @type {import('eslint').Rule.RuleModule} */
 module.exports = {
     meta: {
         docs: {
@@ -62,7 +63,7 @@ module.exports = {
             category: "Stylistic Issues",
 
             recommended: false,
-            url: ""
+            url: "https://github.com/forivall/eslint-plugin-cupcake/blob/main/docs/rules/${ruleId}.md"
         },
 
         fixable: null,

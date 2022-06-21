@@ -1,33 +1,3 @@
-
-This is a trial of [GitHub Repository Template](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/).
-
-Please update `package.json` after you created new repository with this template.
-
-**File Structure**:
-
-- `docs/rules/` is the directory to put documentation.
-- `lib/rules/` is the directory to put rule definitions.
-- `scripts/` is the directory to put development scripts.
-- `tests/lib/` is the directory to put tests for `lib/`.
-- `.eslintignore` and `.eslintrc.js` are the configuration to lint this repository.
-
-**Dependencies**:
-
-This template uses [mocha](https://www.npmjs.com/package/mocha), [nyc](https://www.npmjs.com/package/nyc), and [Travis CI](https://travis-ci.com/) for tests, as same as ESLint itself. If you want to use other tools, customize it.
-
-**Development Tools**:
-
-- `npm run add-rule foo` command adds a rule definition.
-- `npm version` command updates the following stuff by the `meta` property of rules:
-    - the header of `docs/rules/*.md`.
-    - `lib/configs/recommended.js` file.
-    - `lib/index.js` file.
-    - the rule table in `README.md` file.
-
-Below is an example of README.
-
-----
-
 # eslint-plugin-cupcake
 
 <!--
@@ -36,11 +6,11 @@ Below is an example of README.
 [![coverage status](https://coveralls.io/repos/github/forivall/eslint-plugin-cupcake/badge.svg)](https://coveralls.io/github/forivall/eslint-plugin-cupcake)
 -->
 
-A template for ESLint plugins.
+A collection of eslint rules for consistent code standards.
 
 ## Installation
 
-Use [npm](https://www.npmjs.com/) or a compatibility tool to install.
+Use [npm](https://www.npmjs.com/) or a compatible tool to install.
 
 ```
 $ npm install --save-dev eslint eslint-plugin-cupcake
@@ -48,8 +18,8 @@ $ npm install --save-dev eslint eslint-plugin-cupcake
 
 ### Requirements
 
-- Node.js v8.10.0 or newer versions.
-- ESLint v5.16.0 or newer versions.
+- Node.js v14.15.0 or newer versions.
+- ESLint v6.8.0 or newer versions.
 
 ## Usage
 
