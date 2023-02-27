@@ -33,6 +33,11 @@ module.exports = {
         ],
         "eslint-plugin/test-case-shorthand-strings": "error",
     },
+    settings: {
+        jsdoc: {
+            mode: "typescript",
+        },
+    },
     overrides: [
         {
             files: "scripts/**/*.js",

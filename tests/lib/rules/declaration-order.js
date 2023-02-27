@@ -31,6 +31,10 @@ new RuleTester().run("declaration-order", rule, {
             parserOptions: { ecmaVersion: 6 },
         },
         {
+            code: "let b = 1; if (shouldThrow) { throw 'blah' } const a = 2;",
+            parserOptions: { ecmaVersion: 6 },
+        },
+        {
             code: "let b; const a = 1;",
             options: [["let", "const"]],
             parserOptions: { ecmaVersion: 6 },
@@ -90,6 +94,11 @@ new RuleTester().run("declaration-order", rule, {
                     data: { thisKind: "let", prevKind: "const" },
                 },
             ],
+        },
+        {
+            code: "let b = 1; function doThrow() { throw 'blah' } const a = 2;",
+            parserOptions: { ecmaVersion: 6 },
+            errors: letConstErrors,
         },
     ],
 });
