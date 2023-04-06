@@ -82,6 +82,16 @@ ruleTester.run("func-style", rule, {
             options: ["declaration", { allowArrowFunctions: true }],
             parserOptions: { ecmaVersion: 6 },
         },
+        {
+            code: "if (foo) { var bar = function bar() { this; } }",
+            options: ["declaration", { allowArrowFunctions: true }],
+            parserOptions: { ecmaVersion: 6 },
+        },
+        {
+            code: "if (foo) { var bar = function bar() { this; } }",
+            options: ["declaration", { allowInnerExpressions: true }],
+            parserOptions: { ecmaVersion: 6 },
+        },
     ],
 
     invalid: [
@@ -91,6 +101,16 @@ ruleTester.run("func-style", rule, {
             errors: [
                 {
                     messageId: "declaration",
+                    type: "VariableDeclarator",
+                },
+            ],
+        },
+        {
+            code: "var foo = function(){};",
+            options: ["declaration", { allowArrowFunctions: true }],
+            errors: [
+                {
+                    messageId: "declarationOrArrow",
                     type: "VariableDeclarator",
                 },
             ],
@@ -124,6 +144,39 @@ ruleTester.run("func-style", rule, {
                 {
                     messageId: "expression",
                     type: "FunctionDeclaration",
+                },
+            ],
+        },
+        {
+            code: "if (foo) { var bar = function bar() { this; } }",
+            options: ["declaration"],
+            errors: [
+                {
+                    messageId: "declaration",
+                    type: "VariableDeclarator",
+                },
+            ],
+        },
+        {
+            code: "if (foo) { var bar = function bar() { this; } }",
+            options: [
+                "declaration",
+                { allowArrowFunctions: true, allowInnerExpressions: false },
+            ],
+            errors: [
+                {
+                    messageId: "declarationOrArrow",
+                    type: "VariableDeclarator",
+                },
+            ],
+        },
+        {
+            code: "if (foo) { var bar = function bar() {} }",
+            options: ["declaration", { allowArrowFunctions: true }],
+            errors: [
+                {
+                    messageId: "declarationOrArrow",
+                    type: "VariableDeclarator",
                 },
             ],
         },
