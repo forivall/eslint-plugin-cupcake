@@ -1,5 +1,5 @@
 # cupcake/func-style
-> Enforce the consistent use of either function declarations or expressions
+> Enforce the consistent use of either `function` declarations or expressions
 > - ⭐️ This rule is included in `plugin:cupcake/recommended` preset.
 
 This rule is based on [eslint's `func-style` rule](https://eslint.org/docs/latest/rules/func-style). Visit their documentation for more in-depth information.
@@ -100,3 +100,8 @@ if (bar) {
 ## When Not To Use It
 
 If you want to allow developers to each decide how they want to write functions on their own, then you can disable this rule.
+
+## Implementation
+
+- [Rule source](../../lib/rules/func-style.js)
+- [Test source](../../tests/lib/rules/func-style.js)

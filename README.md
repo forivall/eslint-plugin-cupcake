@@ -47,6 +47,7 @@ See also [Configuring ESLint](https://eslint.org/docs/user-guide/configuring).
 |:--------|:------------|:--:|
 | [cupcake/case-block](./docs/rules/case-block.md) | Enforces block statements in case blocks | ⭐️✒️ |
 | [cupcake/declaration-order](./docs/rules/declaration-order.md) | Enforces order of variable declarations | ⭐️ |
+| [cupcake/func-style](./docs/rules/func-style.md) | Enforce the consistent use of either `function` declarations or expressions | ⭐️ |
 
 <!--RULE_TABLE_END-->
 
