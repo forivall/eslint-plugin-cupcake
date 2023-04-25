@@ -7,7 +7,7 @@ const letConstErrors = [
     {
         messageId: "order",
         type: "VariableDeclaration",
-        data: { thisKind: "const", prevKind: "let" },
+        data: { thisKind: "const", prevKind: "let", prevVar: "b" },
     },
 ];
 
@@ -56,6 +56,10 @@ new RuleTester().run("declaration-order", rule, {
             options: [["let", "const", "var"]],
             parserOptions: { ecmaVersion: 6 },
         },
+        {
+            code: "const c = []; let b; c.push(b); const a = [...c]",
+            parserOptions: { ecmaVersion: 6 },
+        },
     ],
     invalid: [
         {
@@ -65,6 +69,11 @@ new RuleTester().run("declaration-order", rule, {
         },
         {
             code: "let b; var c; const a = 1; ",
+            parserOptions: { ecmaVersion: 6 },
+            errors: letConstErrors,
+        },
+        {
+            code: "let b; let c; const a = 1; ",
             parserOptions: { ecmaVersion: 6 },
             errors: letConstErrors,
         },
@@ -86,7 +95,7 @@ new RuleTester().run("declaration-order", rule, {
                 {
                     messageId: "order",
                     type: "VariableDeclaration",
-                    data: { thisKind: "let", prevKind: "const" },
+                    data: { thisKind: "let", prevKind: "const", prevVar: "a" },
                 },
             ],
         },
@@ -98,12 +107,12 @@ new RuleTester().run("declaration-order", rule, {
                 {
                     messageId: "order",
                     type: "VariableDeclaration",
-                    data: { thisKind: "const", prevKind: "var" },
+                    data: { thisKind: "const", prevKind: "var", prevVar: "c" },
                 },
                 {
                     messageId: "order",
                     type: "VariableDeclaration",
-                    data: { thisKind: "let", prevKind: "const" },
+                    data: { thisKind: "let", prevKind: "var", prevVar: "c" },
                 },
             ],
         },
@@ -124,6 +133,11 @@ new RuleTester().run("declaration-order", rule, {
         },
         {
             code: "let b = 1; for(;;) { if (shouldContinue) { continue; } } const a = 2;",
+            parserOptions: { ecmaVersion: 6 },
+            errors: letConstErrors,
+        },
+        {
+            code: "const c = []; let d; let b; c.push(d); const a = [...c]",
             parserOptions: { ecmaVersion: 6 },
             errors: letConstErrors,
         },
