@@ -35,6 +35,18 @@ new RuleTester().run("declaration-order", rule, {
             parserOptions: { ecmaVersion: 6 },
         },
         {
+            code: "function foo() { let b = 1; if (shouldReturn) { return 'blah' } const a = 2; }",
+            parserOptions: { ecmaVersion: 6 },
+        },
+        {
+            code: "labelled: { let b = 1; if (shouldBreak) { break labelled; } const a = 2; }",
+            parserOptions: { ecmaVersion: 6 },
+        },
+        {
+            code: "for(;;) { let b = 1; if (shouldContinue) { continue; } const a = 2; }",
+            parserOptions: { ecmaVersion: 6 },
+        },
+        {
             code: "let b; const a = 1;",
             options: [["let", "const"]],
             parserOptions: { ecmaVersion: 6 },
@@ -97,6 +109,21 @@ new RuleTester().run("declaration-order", rule, {
         },
         {
             code: "let b = 1; function doThrow() { throw 'blah' } const a = 2;",
+            parserOptions: { ecmaVersion: 6 },
+            errors: letConstErrors,
+        },
+        {
+            code: "let b = 1; function foo() { if (shouldReturn) { return 'blah' } } const a = 2;",
+            parserOptions: { ecmaVersion: 6 },
+            errors: letConstErrors,
+        },
+        {
+            code: "let b = 1; labelled: { if (shouldBreak) { break labelled; } } const a = 2;",
+            parserOptions: { ecmaVersion: 6 },
+            errors: letConstErrors,
+        },
+        {
+            code: "let b = 1; for(;;) { if (shouldContinue) { continue; } } const a = 2;",
             parserOptions: { ecmaVersion: 6 },
             errors: letConstErrors,
         },
