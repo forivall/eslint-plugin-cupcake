@@ -141,5 +141,10 @@ new RuleTester().run("declaration-order", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: letConstErrors,
         },
+        {
+            code: "const c = []; let b; const d = []; c.push(b); const a = [...c]",
+            parserOptions: { ecmaVersion: 6 },
+            errors: [{ ...letConstErrors[0], column: 22 }],
+        },
     ],
 });
