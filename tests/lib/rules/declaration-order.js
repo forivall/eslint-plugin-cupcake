@@ -35,6 +35,10 @@ new RuleTester().run("declaration-order", rule, {
             parserOptions: { ecmaVersion: 6 },
         },
         {
+            code: "let b = 1; function doStuff() { exit(b) } const a = 2;",
+            parserOptions: { ecmaVersion: 6 },
+        },
+        {
             code: "function foo() { let b = 1; if (shouldReturn) { return 'blah' } const a = 2; }",
             parserOptions: { ecmaVersion: 6 },
         },
