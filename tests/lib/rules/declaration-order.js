@@ -64,6 +64,14 @@ new RuleTester().run("declaration-order", rule, {
             code: "const c = []; let b; c.push(b); const a = [...c]",
             parserOptions: { ecmaVersion: 6 },
         },
+        {
+            code: `let a; let d; if (thing) { a = 1; d = 2 } else { a = 2; } const b = a + 1`,
+            parserOptions: { ecmaVersion: 6 },
+        },
+        {
+            code: `const c = 3; let a; let d; if (thing) { a = 1; d = c } else { a = 2; } const b = a + 1`,
+            parserOptions: { ecmaVersion: 6 },
+        },
     ],
     invalid: [
         {
