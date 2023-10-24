@@ -9,7 +9,20 @@
     "keywords": [
         "eslint",
         "eslintplugin",
-        "eslint-plugin"
+        "eslint-plugin",
+        "order",
+        "sorting",
+        "sort",
+        "var",
+        "let",
+        "const",
+        "function",
+        "arrow",
+        "this",
+        "case",
+        "block",
+        "curly",
+        "braces"
     ],
     "author": "",
     "license": "MIT",
